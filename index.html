@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="S. Taylor Bookkeeping — Clean, accountant-ready books. Cleanup and catch-up bookkeeping for nonprofits and small businesses." />
+<title>S. Taylor Bookkeeping — Clean, Accountant-Ready Books</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream: #F8F1E4;
+    --cream-deep: #F0E6D2;
+    --coral: #E8704C;
+    --coral-soft: #F4A584;
+    --coral-blush: #F8D4BE;
+    --palm: #2C5E4F;
+    --palm-mid: #4A7F6E;
+    --palm-soft: #A8C4AE;
+    --gold: #D4A341;
+    --gold-deep: #A37A2E;
+    --hibiscus: #C73E5C;
+    --ink: #2A3028;
+    --ink-soft: #5A5F55;
+    --shadow: 0 14px 40px -12px rgba(44, 94, 79, 0.25);
+    --shadow-lift: 0 24px 60px -18px rgba(44, 94, 79, 0.35);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Emphasized words inside headings/content become orange script */
+  em { font-family: 'Caveat', cursive; font-style: normal; color: var(--coral); font-weight: 700; font-size: 1.15em; display: inline-block; transform: rotate(-1.5deg); }
+  h1 em, h2 em { font-size: 1.1em; }
+  strong { color: var(--gold-deep); font-weight: 600; }
+
+  .display { font-family: 'Fraunces', Georgia, serif; font-weight: 600; letter-spacing: -0.015em; line-height: 1.02; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 16px 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(248, 241, 228, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(44, 94, 79, 0.1);
+  }
+  .logo-mark { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--palm); }
+  .logo-mark svg, .logo-mark img { width: 44px; height: 44px; transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); object-fit: contain; }
+  .logo-mark:hover svg, .logo-mark:hover img { transform: rotate(-8deg) scale(1.05); }
+  .logo-text { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text .name { font-family: 'Caveat', cursive; font-weight: 700; font-size: 26px; color: var(--coral); letter-spacing: 0.01em; }
+  .logo-text .sub { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 10px; color: var(--palm); letter-spacing: 0.22em; text-transform: uppercase; margin-top: 2px; }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a { color: var(--palm); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.25s; position: relative; }
+  .nav-links a::after { content: ""; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--coral); transition: width 0.3s; }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-links a:hover { color: var(--coral); }
+  .nav-cta {
+    background: var(--coral); color: var(--cream) !important;
+    padding: 11px 20px; border-radius: 999px;
+    font-size: 13px !important; font-weight: 600 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 18px -6px rgba(232, 112, 76, 0.5);
+  }
+  .nav-cta:hover { background: var(--palm); color: var(--cream) !important; transform: translateY(-2px); }
+  .nav-cta::after { display: none; }
+  .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; color: var(--palm); }
+
+  .hero {
+    position: relative; padding: 130px 32px 90px;
+    overflow: hidden; min-height: 100vh;
+    display: flex; align-items: center;
+  }
+  .deco { position: absolute; pointer-events: none; z-index: 0; }
+  .deco-palm-1 { top: 60px; right: -40px; width: 340px; opacity: 0.85; animation: sway 8s ease-in-out infinite; transform-origin: bottom center; }
+  .deco-palm-2 { bottom: -60px; left: -70px; width: 280px; opacity: 0.6; animation: sway-reverse 10s ease-in-out infinite -3s; transform-origin: bottom center; }
+  .deco-leaf-1 { top: 140px; left: 6%; width: 140px; opacity: 0.8; animation: floaty 7s ease-in-out infinite; }
+  .deco-leaf-2 { bottom: 20%; right: 8%; width: 100px; opacity: 0.7; animation: floaty 9s ease-in-out infinite -2s; }
+  .deco-flower { top: 44%; left: 3%; width: 80px; opacity: 0.9; animation: spin-slow 20s linear infinite; }
+  .deco-sun { top: 24%; right: 10%; width: 110px; opacity: 0.4; }
+
+  @keyframes sway { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
+  @keyframes sway-reverse { 0%, 100% { transform: scaleX(-1) rotate(-3deg); } 50% { transform: scaleX(-1) rotate(3deg); } }
+  @keyframes floaty { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-14px) rotate(4deg); } }
+  @keyframes spin-slow { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; max-width: 1280px; margin: 0 auto; width: 100%; align-items: center; position: relative; z-index: 3; }
+  .eyebrow-wrap { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s ease 0.1s forwards; }
+  .eyebrow-line { width: 40px; height: 2px; background: var(--coral); border-radius: 2px; }
+  .eyebrow { font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--coral); font-weight: 600; }
+  .hero h1 { font-size: clamp(2.6rem, 6.5vw, 5.5rem); color: var(--palm); margin-bottom: 28px; }
+  .hero h1 .line { display: block; overflow: hidden; }
+  .hero h1 .line span {
+    display: inline-block; opacity: 0; transform: translateY(110%);
+    animation: revealUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .hero h1 .accent-script {
+    font-family: 'Caveat', cursive; font-weight: 700; color: var(--coral);
+    font-size: 1.15em; font-style: normal; letter-spacing: 0;
+    display: inline-block; transform: rotate(-2deg);
+  }
+  .hero h1 .line:nth-child(1) span { animation-delay: 0.15s; }
+  .hero h1 .line:nth-child(2) span { animation-delay: 0.3s; }
+  .hero h1 .line:nth-child(3) span { animation-delay: 0.45s; }
+
+  .hero-sub { font-size: 18px; color: var(--ink-soft); max-width: 500px; margin-bottom: 38px; opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards; }
+  .hero-cta-group { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; opacity: 0; animation: fadeUp 0.8s ease 0.85s forwards; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 30px; border-radius: 999px;
+    font-size: 15px; font-weight: 600; text-decoration: none;
+    cursor: pointer; border: none; font-family: inherit;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .btn-primary { background: var(--coral); color: var(--cream); box-shadow: 0 10px 24px -8px rgba(232, 112, 76, 0.5); }
+  .btn-primary:hover { background: var(--palm); transform: translateY(-3px); box-shadow: 0 16px 32px -10px rgba(44, 94, 79, 0.4); }
+  .btn-primary .arrow { transition: transform 0.3s; }
+  .btn-primary:hover .arrow { transform: translateX(5px); }
+  .script-note { font-family: 'Caveat', cursive; font-size: 20px; color: var(--gold-deep); transform: rotate(-3deg); display: inline-flex; align-items: center; gap: 6px; }
+
+  .hero-visual { position: relative; aspect-ratio: 4/5; opacity: 0; animation: fadeUp 1s ease 0.5s forwards; }
+  .card { position: absolute; border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; }
+  .card-hero {
+    width: 75%; height: 82%; top: 8%; right: 0;
+    background: var(--coral); padding: 32px; color: var(--cream);
+    display: flex; flex-direction: column; justify-content: space-between;
+    transform: rotate(3deg);
+  }
+  .card-hero .eyebrow-c { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.85; font-weight: 600; }
+  .card-hero .big-num { font-family: 'Fraunces', serif; font-size: 64px; font-weight: 600; line-height: 0.95; margin-top: 8px; color: var(--cream); }
+  .card-hero .big-num em { font-family: 'Caveat', cursive; font-style: normal; font-size: 0.7em; color: var(--gold); display: block; margin: 6px 0; transform: none; }
+  .card-hero .caption { font-size: 13px; opacity: 0.9; font-style: italic; font-family: 'Fraunces', serif; }
+  .bar-row { display: flex; align-items: flex-end; gap: 6px; height: 68px; margin: 16px 0; }
+  .bar {
+    flex: 1; background: rgba(248, 241, 228, 0.25);
+    border-radius: 3px 3px 0 0; transform-origin: bottom;
+    animation: growBar 1s cubic-bezier(0.22, 1, 0.36, 1) forwards; transform: scaleY(0);
+  }
+  .bar:nth-child(1) { height: 28%; animation-delay: 1.2s; }
+  .bar:nth-child(2) { height: 48%; animation-delay: 1.3s; }
+  .bar:nth-child(3) { height: 38%; animation-delay: 1.4s; background: var(--gold); }
+  .bar:nth-child(4) { height: 68%; animation-delay: 1.5s; }
+  .bar:nth-child(5) { height: 85%; animation-delay: 1.6s; background: var(--gold); }
+  .bar:nth-child(6) { height: 95%; animation-delay: 1.7s; }
+  @keyframes growBar { to { transform: scaleY(1); } }
+
+  .card-float { padding: 20px 22px; background: var(--cream); }
+  .card-1 { bottom: 2%; left: 0; width: 56%; transform: rotate(-4deg); animation: wobble 7s ease-in-out infinite; z-index: 2; }
+  .card-2 { top: 0; left: -5%; width: 48%; background: var(--palm); color: var(--cream); transform: rotate(-6deg); animation: wobble2 8s ease-in-out infinite -1s; z-index: 2; }
+  @keyframes wobble { 0%, 100% { transform: rotate(-4deg) translateY(0); } 50% { transform: rotate(-3deg) translateY(-10px); } }
+  @keyframes wobble2 { 0%, 100% { transform: rotate(-6deg) translateY(0); } 50% { transform: rotate(-4deg) translateY(-8px); } }
+  .card-1 .chip-label { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--coral); margin-bottom: 4px; font-weight: 600; }
+  .card-1 .chip-val { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: var(--palm); }
+  .card-1 .chip-sub { font-family: 'Caveat', cursive; font-size: 16px; color: var(--gold-deep); margin-top: 2px; }
+  .card-2 .check-row { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; }
+  .card-2 .check-row + .check-row { margin-top: 8px; }
+  .check-dot { width: 18px; height: 18px; background: var(--gold); border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; }
+  .check-dot::after { content: ""; width: 8px; height: 4px; border-left: 2px solid var(--palm); border-bottom: 2px solid var(--palm); transform: rotate(-45deg) translate(1px, -1px); }
+
+  .marquee {
+    background: var(--palm); color: var(--cream);
+    padding: 22px 0; overflow: hidden; position: relative; z-index: 4;
+    transform: rotate(-1.5deg) scale(1.03); margin: 20px 0;
+    border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+  }
+  .marquee-track { display: flex; gap: 48px; animation: marqueeScroll 45s linear infinite; white-space: nowrap; width: max-content; }
+  .marquee-item { font-family: 'Fraunces', serif; font-style: italic; font-size: 24px; font-weight: 500; display: flex; align-items: center; gap: 48px; }
+  .marquee-item::after { content: "✿"; color: var(--coral); font-style: normal; font-size: 20px; }
+  @keyframes marqueeScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  section { position: relative; z-index: 2; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .section-pad { padding: 120px 0; }
+
+  .section-eyebrow-wrap { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+  .section-eyebrow-line { width: 40px; height: 2px; background: var(--coral); border-radius: 2px; }
+  .section-eyebrow { font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--coral); font-weight: 600; }
+  .section-title { font-size: clamp(2.2rem, 5vw, 4rem); color: var(--palm); margin-bottom: 20px; max-width: 820px; }
+  .section-lede { font-size: 17px; color: var(--ink-soft); max-width: 620px; }
+
+  /* ABOUT — now has 3 columns: copy, photo, quote */
+  .about { background: var(--coral-blush); border-radius: 36px; margin: 0 32px; padding: 100px 0; position: relative; overflow: hidden; }
+  .about::before { content: ""; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; background: var(--coral-soft); border-radius: 50%; opacity: 0.6; }
+  .about::after { content: ""; position: absolute; bottom: -100px; left: -60px; width: 220px; height: 220px; background: var(--gold); border-radius: 50%; opacity: 0.35; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; margin-bottom: 80px; }
+  .about-grid p { font-size: 16px; color: var(--ink); margin-bottom: 16px; }
+  .pull-quote { font-size: clamp(1.5rem, 3vw, 2.25rem); font-family: 'Fraunces', serif; font-weight: 500; color: var(--palm); line-height: 1.25; position: relative; padding-left: 28px; margin-top: 28px; font-style: italic; }
+  .pull-quote::before { content: ""; position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; background: var(--coral); border-radius: 3px; }
+
+  /* Owner card */
+  .owner-block {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .owner-photo-wrap {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 24px;
+    overflow: hidden;
+    transform: rotate(-2deg);
+    box-shadow: var(--shadow-lift);
+    background: var(--cream);
+  }
+  .owner-photo-wrap::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border: 3px solid var(--palm);
+    border-radius: 24px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .owner-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  /* placeholder for missing photo */
+  .owner-photo-placeholder {
+    width: 100%; height: 100%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--coral-soft), var(--gold));
+    color: var(--cream);
+    font-family: 'Fraunces', serif;
+    font-size: 80px;
+    font-weight: 600;
+  }
+  .owner-tag {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    background: var(--palm);
+    color: var(--cream);
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    font-weight: 700;
+    z-index: 3;
+    white-space: nowrap;
+    box-shadow: var(--shadow);
+  }
+  .owner-copy .owner-name {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--palm);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .owner-copy .owner-title {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: var(--coral);
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+  .owner-copy .owner-quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.45;
+    color: var(--ink);
+    position: relative;
+    padding-left: 28px;
+  }
+  .owner-copy .owner-quote::before {
+    content: "\201C";
+    position: absolute;
+    left: -4px;
+    top: -8px;
+    font-size: 60px;
+    color: var(--coral);
+    font-family: 'Fraunces', serif;
+    line-height: 1;
+  }
+
+  .services-head { text-align: center; margin-bottom: 80px; }
+  .services-head .section-title, .services-head .section-lede { margin-left: auto; margin-right: auto; }
+  .services-head .section-eyebrow-wrap { justify-content: center; }
+
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .service-card {
+    background: var(--cream-deep); border-radius: 28px;
+    padding: 44px 38px; position: relative; overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s, border-color 0.5s;
+    border: 2px solid transparent;
+  }
+  .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lift); border-color: var(--coral-soft); }
+  .service-card .num { font-family: 'Caveat', cursive; font-size: 22px; color: var(--coral); margin-bottom: 16px; display: block; font-weight: 600; }
+  .service-card h3 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 28px; color: var(--palm); margin-bottom: 16px; line-height: 1.15; }
+  .service-card p { font-size: 15px; color: var(--ink-soft); margin-bottom: 20px; }
+  .service-card ul { list-style: none; padding: 0; }
+  .service-card ul li { position: relative; padding-left: 22px; font-size: 14px; color: var(--ink-soft); margin-bottom: 10px; }
+  .service-card ul li::before { content: "✿"; position: absolute; left: 0; top: 0; color: var(--gold); font-size: 12px; }
+  .service-icon { position: absolute; top: 38px; right: 38px; width: 52px; height: 52px; opacity: 0.9; transition: all 0.5s; }
+  .service-card:hover .service-icon { transform: rotate(-8deg) scale(1.08); }
+
+  .service-card.feature {
+    grid-column: span 2; background: var(--palm); color: var(--cream);
+    padding: 60px; display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: center; border-color: transparent; position: relative;
+  }
+  .service-card.feature::before { content: ""; position: absolute; top: -60px; right: -60px; width: 220px; height: 220px; background: var(--coral); border-radius: 50%; opacity: 0.2; }
+  .service-card.feature h3 { color: var(--cream); font-size: 38px; position: relative; z-index: 2; }
+  .service-card.feature h3 em { color: var(--gold); }
+  .service-card.feature p { color: rgba(248, 241, 228, 0.85); position: relative; z-index: 2; }
+  .service-card.feature .num { color: var(--gold); }
+  .service-card.feature ul { position: relative; z-index: 2; }
+  .service-card.feature ul li { color: rgba(248, 241, 228, 0.9); font-size: 15px; }
+  .service-card.feature ul li::before { color: var(--coral); }
+  .service-card.feature:hover { transform: translateY(-4px); border-color: transparent; }
+
+  .differentiators { background: var(--cream-deep); padding: 140px 0; position: relative; }
+  .diff-head { text-align: center; max-width: 720px; margin: 0 auto 70px; }
+  .diff-head .section-title, .diff-head .section-eyebrow-wrap { margin-left: auto; margin-right: auto; }
+  .diff-head .section-eyebrow-wrap { justify-content: center; }
+
+  .diff-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  .diff-item {
+    background: var(--cream); border-radius: 24px;
+    padding: 36px 28px; position: relative;
+    transition: all 0.4s; border: 2px solid transparent;
+  }
+  .diff-item:hover { transform: translateY(-6px); border-color: var(--gold); }
+  .diff-item .badge {
+    width: 44px; height: 44px; background: var(--coral); color: var(--cream);
+    border-radius: 50%; display: grid; place-items: center;
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: 18px;
+    margin-bottom: 20px; transition: transform 0.4s;
+  }
+  .diff-item:hover .badge { transform: rotate(-10deg) scale(1.08); background: var(--palm); }
+  .diff-item h4 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 22px; color: var(--palm); margin-bottom: 12px; line-height: 1.2; }
+  .diff-item p { font-size: 14px; color: var(--ink-soft); }
+
+  .case-study { background: var(--palm); color: var(--cream); padding: 140px 0; position: relative; overflow: hidden; }
+  .case-study::before { content: ""; position: absolute; top: -100px; right: -100px; width: 420px; height: 420px; background: var(--coral); border-radius: 50%; opacity: 0.15; }
+  .case-study::after { content: ""; position: absolute; bottom: -80px; left: -60px; width: 280px; height: 280px; background: var(--gold); border-radius: 50%; opacity: 0.2; }
+  .case-study .section-eyebrow { color: var(--coral); }
+  .case-study .section-eyebrow-line { background: var(--coral); }
+  .case-study .section-title { color: var(--cream); }
+  .case-study .section-title .title-script { font-family: 'Caveat', cursive; color: var(--gold); font-size: 1.1em; font-weight: 700; display: inline-block; transform: rotate(-2deg); }
+  .case-study em { color: var(--gold); }
+  .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 56px; position: relative; z-index: 2; }
+  .case-grid .narrative p { color: rgba(248, 241, 228, 0.85); font-size: 16px; margin-bottom: 20px; }
+  .case-grid .narrative p strong { color: var(--gold); font-weight: 600; }
+  .case-grid .narrative .quote { font-family: 'Caveat', cursive; font-size: 26px; color: var(--coral-soft); margin-top: 32px; line-height: 1.4; font-weight: 600; }
+  .case-grid .narrative .quote::before { content: "\201C"; font-size: 40px; color: var(--gold); line-height: 0; vertical-align: -0.3em; margin-right: 4px; }
+  .case-grid .narrative .quote::after { content: "\201D"; font-size: 40px; color: var(--gold); line-height: 0; vertical-align: -0.3em; margin-left: 4px; }
+
+  .before-after { background: rgba(248, 241, 228, 0.08); border: 2px solid rgba(248, 241, 228, 0.18); border-radius: 28px; padding: 40px; backdrop-filter: blur(6px); }
+  .ba-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .ba-col .ba-label { font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; font-weight: 600; }
+  .ba-col .ba-big { font-family: 'Fraunces', serif; font-size: 44px; font-weight: 600; line-height: 1; margin-bottom: 6px; }
+  .ba-col.before .ba-big { color: rgba(248, 241, 228, 0.45); text-decoration: line-through; text-decoration-color: var(--hibiscus); text-decoration-thickness: 2.5px; }
+  .ba-col.after .ba-big { color: var(--coral-soft); }
+  .ba-col .ba-cap { font-size: 13px; color: rgba(248, 241, 228, 0.72); }
+  .ba-divider { height: 1px; background: rgba(248, 241, 228, 0.15); margin: 28px 0; }
+  .ba-result { font-family: 'Fraunces', serif; font-style: italic; font-size: 20px; color: var(--cream); line-height: 1.4; }
+  .ba-result .result-script { color: var(--gold); font-family: 'Caveat', cursive; font-style: normal; font-size: 1.2em; font-weight: 700; }
+
+  .audience-band { padding: 120px 0; background: var(--cream); }
+  .audience-head { text-align: center; max-width: 720px; margin: 0 auto 60px; }
+  .audience-head .section-title, .audience-head .section-eyebrow-wrap { margin-left: auto; margin-right: auto; }
+  .audience-head .section-eyebrow-wrap { justify-content: center; }
+
+  .audience-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .audience-tile { background: var(--cream-deep); border-radius: 24px; padding: 36px 24px; text-align: center; transition: all 0.4s; position: relative; overflow: hidden; }
+  .audience-tile:nth-child(1) { background: var(--coral-blush); }
+  .audience-tile:nth-child(2) { background: var(--palm-soft); }
+  .audience-tile:nth-child(3) { background: var(--cream-deep); }
+  .audience-tile:nth-child(4) { background: var(--coral-soft); }
+  .audience-tile:hover { transform: translateY(-6px) rotate(-1deg); box-shadow: var(--shadow); }
+  .audience-tile svg { width: 52px; height: 52px; margin-bottom: 20px; color: var(--palm); }
+  .audience-tile h5 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 17px; color: var(--palm); line-height: 1.3; }
+
+  .contact-sec { padding: 140px 0; background: var(--cream); position: relative; overflow: hidden; }
+  .contact-sec::before { content: ""; position: absolute; top: 10%; right: -120px; width: 360px; height: 360px; background: var(--coral-blush); border-radius: 50%; opacity: 0.5; }
+  .contact-sec::after { content: ""; position: absolute; bottom: -80px; left: -100px; width: 280px; height: 280px; background: var(--palm-soft); border-radius: 50%; opacity: 0.4; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: start; position: relative; z-index: 2; }
+  .contact-info p { color: var(--ink-soft); font-size: 16px; max-width: 440px; margin-bottom: 8px; }
+  .contact-info .script-note-big { font-family: 'Caveat',cursive; font-size: 22px; color: var(--coral); margin-top: 12px; }
+  .contact-detail { margin-top: 32px; padding-top: 28px; border-top: 1.5px dashed rgba(44, 94, 79, 0.25); }
+  .contact-detail .label { font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--coral); margin-bottom: 8px; font-weight: 600; }
+  .contact-detail a { font-family: 'Fraunces', serif; font-size: 22px; color: var(--palm); text-decoration: none; display: block; transition: color 0.2s; font-weight: 500; }
+  .contact-detail a:hover { color: var(--coral); }
+  .contact-detail + .contact-detail { margin-top: 20px; padding-top: 20px; }
+
+  form { background: var(--cream-deep); padding: 48px; border-radius: 28px; box-shadow: var(--shadow); position: relative; }
+  form .form-badge { position: absolute; top: -18px; right: 30px; background: var(--coral); color: var(--cream); padding: 8px 18px; border-radius: 999px; font-family: 'Caveat', cursive; font-size: 18px; font-weight: 700; transform: rotate(4deg); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--palm); margin-bottom: 8px; font-weight: 600; }
+  .form-group input, .form-group textarea { width: 100%; padding: 14px 16px; border: 2px solid transparent; background: var(--cream); border-radius: 14px; font-family: inherit; font-size: 15px; color: var(--ink); transition: all 0.25s; }
+  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--coral); background: var(--cream); }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+  form button { width: 100%; margin-top: 6px; justify-content: center; }
+  .form-note { margin-top: 16px; text-align: center; font-family: 'Caveat', cursive; font-size: 17px; color: var(--gold-deep); }
+
+  footer { background: var(--palm); color: var(--cream); padding: 80px 32px 32px; position: relative; z-index: 2; overflow: hidden; }
+  footer::before { content: ""; position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: var(--coral); border-radius: 50%; opacity: 0.15; }
+  .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 60px; padding-bottom: 50px; border-bottom: 1.5px dashed rgba(248, 241, 228, 0.2); position: relative; z-index: 2; }
+  .footer-brand p { color: rgba(248, 241, 228, 0.7); font-size: 14px; margin-top: 20px; max-width: 340px; }
+  .footer-col h6 { font-family: 'Caveat', cursive; font-weight: 700; font-size: 22px; color: var(--coral-soft); margin-bottom: 16px; }
+  .footer-col a { color: rgba(248, 241, 228, 0.75); text-decoration: none; font-size: 14px; display: block; margin-bottom: 10px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 28px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(248, 241, 228, 0.5); position: relative; z-index: 2; }
+  .footer-bottom .script-sig { font-family: 'Caveat', cursive; font-size: 18px; color: var(--coral-soft); }
+  .footer-brand-logo { display: flex; align-items: center; gap: 12px; }
+  .footer-brand-logo img, .footer-brand-logo svg { width: 52px; height: 52px; object-fit: contain; }
+  .footer-brand-logo .footer-name { font-family: 'Caveat', cursive; font-weight: 700; font-size: 28px; color: var(--coral-soft); line-height: 1; }
+  .footer-brand-logo .footer-sub { font-size: 10px; color: var(--cream); opacity: 0.7; margin-top: 3px; letter-spacing: 0.22em; text-transform: uppercase; }
+
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal.delay-1 { transition-delay: 0.1s; }
+  .reveal.delay-2 { transition-delay: 0.2s; }
+  .reveal.delay-3 { transition-delay: 0.3s; }
+  .reveal.delay-4 { transition-delay: 0.4s; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes revealUp { from { opacity: 0; transform: translateY(110%); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); flex-direction: column; padding: 24px; gap: 18px; box-shadow: var(--shadow); }
+    .nav-links.open { display: flex; }
+    .nav-links a { width: 100%; }
+    .nav-cta { text-align: center; }
+    .mobile-toggle { display: block; }
+
+    .hero { padding: 110px 20px 70px; min-height: auto; }
+    .hero-grid { grid-template-columns: 1fr; gap: 60px; }
+    .hero-visual { max-width: 440px; margin: 0 auto; width: 100%; }
+    .deco-palm-1 { width: 200px; top: 100px; right: -60px; }
+    .deco-palm-2 { width: 180px; }
+    .deco-leaf-1, .deco-leaf-2 { width: 80px; }
+    .deco-flower { width: 60px; }
+    .deco-sun { width: 80px; }
+
+    .section-pad { padding: 80px 0; }
+    .wrap, .about-grid, .owner-block, .contact-grid { padding: 0 20px; }
+    .about { margin: 0 16px; padding: 70px 0; border-radius: 28px; }
+    .about-grid { grid-template-columns: 1fr; gap: 32px; padding: 0 28px; margin-bottom: 60px; }
+    .owner-block { grid-template-columns: 1fr; gap: 40px; padding: 0 28px; }
+    .owner-photo-wrap { max-width: 320px; margin: 0 auto; }
+
+    .services-grid { grid-template-columns: 1fr; gap: 16px; }
+    .service-card { padding: 36px 28px; }
+    .service-card.feature { grid-column: span 1; grid-template-columns: 1fr; gap: 32px; padding: 44px 28px; }
+    .service-card.feature h3 { font-size: 28px; }
+
+    .diff-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .diff-item { padding: 28px 22px; }
+    .audience-grid { grid-template-columns: 1fr 1fr; }
+
+    .case-study { padding: 80px 0; }
+    .case-grid { grid-template-columns: 1fr; gap: 40px; }
+    .before-after { padding: 28px; }
+    .ba-col .ba-big { font-size: 32px; }
+
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    form { padding: 36px 24px; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+
+    .marquee-item { font-size: 18px; }
+  }
+
+  @media (max-width: 480px) {
+    .diff-grid, .audience-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.4rem; }
+    .hero-cta-group { flex-direction: column; align-items: stretch; }
+    .hero-cta-group .btn { justify-content: center; }
+    .hero-cta-group .script-note { text-align: center; justify-content: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- The entire site is rendered from config.js. See config.js to edit any text, image, or link. -->
+<div id="app"></div>
+
+<!-- Default built-in SVG logo (used when config.brand.logo === "default") -->
+<template id="default-logo">
+  <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g stroke="#D4A341" stroke-width="2" stroke-linecap="round" fill="none">
+      <line x1="40" y1="6" x2="40" y2="12"/>
+      <line x1="40" y1="68" x2="40" y2="74"/>
+      <line x1="6" y1="40" x2="12" y2="40"/>
+      <line x1="68" y1="40" x2="74" y2="40"/>
+      <line x1="16" y1="16" x2="20" y2="20"/>
+      <line x1="60" y1="60" x2="64" y2="64"/>
+      <line x1="16" y1="64" x2="20" y2="60"/>
+      <line x1="60" y1="20" x2="64" y2="16"/>
+    </g>
+    <ellipse cx="40" cy="24" rx="9" ry="12" fill="#E8704C"/>
+    <ellipse cx="56" cy="40" rx="12" ry="9" fill="#E8704C"/>
+    <ellipse cx="40" cy="56" rx="9" ry="12" fill="#E8704C"/>
+    <ellipse cx="24" cy="40" rx="12" ry="9" fill="#E8704C"/>
+    <circle cx="40" cy="40" r="10" fill="#F8F1E4"/>
+    <circle cx="40" cy="40" r="10" fill="none" stroke="#2C5E4F" stroke-width="1.5"/>
+    <path d="M 44 36 Q 42 33.5 39 34 Q 36 34.5 36.5 37 Q 37 39 40 40 Q 43 41 43.5 43 Q 44 46 41 46.5 Q 38 47 36 45"
+          fill="none" stroke="#2C5E4F" stroke-width="1.8" stroke-linecap="round"/>
+  </svg>
+</template>
+
+<script src="config.js"></script>
+<script>
+/* =========================================================================
+   RENDERER — reads SITE_CONFIG and builds the page.
+   If config.js is missing or malformed, shows an error.
+   ========================================================================= */
+(function() {
+  const cfg = window.SITE_CONFIG;
+  const app = document.getElementById('app');
+
+  if (!cfg) {
+    app.innerHTML = '<div style="padding: 80px 32px; text-align: center; font-family: sans-serif;"><h1>⚠️ Configuration missing</h1><p>Make sure <code>config.js</code> is present and loads before this script.</p></div>';
+    return;
+  }
+
+  // Escape nothing by default — config is trusted. But do NOT allow script tags.
+  function safe(str) {
+    if (!str) return '';
+    return String(str).replace(/<script/gi, '&lt;script');
+  }
+
+  // Render logo: custom image if set, else default built-in SVG
+  function renderLogo(sizePx) {
+    if (cfg.brand.logo && cfg.brand.logo !== 'default') {
+      return `<img src="${safe(cfg.brand.logo)}" alt="${safe(cfg.brand.logoAlt)}" style="width:${sizePx}px;height:${sizePx}px;" />`;
+    }
+    return document.getElementById('default-logo').innerHTML;
+  }
+
+  // Nav links
+  const navLinksHTML = cfg.nav.links.map(l =>
+    `<a href="${safe(l.href)}">${safe(l.label)}</a>`
+  ).join('');
+
+  // Marquee items (duplicated for smooth loop)
+  const marqueeHTML = [...cfg.marquee, ...cfg.marquee].map(m =>
+    `<span class="marquee-item">${safe(m)}</span>`
+  ).join('');
+
+  // About paragraphs
+  const aboutParas = cfg.about.paragraphs.map(p => `<p>${safe(p)}</p>`).join('');
+
+  // Owner photo/placeholder
+  const ownerPhotoHTML = cfg.about.owner.photo
+    ? `<img src="${safe(cfg.about.owner.photo)}" alt="${safe(cfg.about.owner.photoAlt)}" onerror="this.parentElement.innerHTML='<div class=&quot;owner-photo-placeholder&quot;>${safe(cfg.about.owner.name[0])}</div><div class=&quot;owner-tag&quot;>✿ ${safe(cfg.about.owner.name)}</div>';" />`
+    : `<div class="owner-photo-placeholder">${safe(cfg.about.owner.name[0])}</div>`;
+
+  // Featured service
+  const featBullets = cfg.services.featured.bullets.map(b => `<li>${safe(b)}</li>`).join('');
+
+  // Service items (labels/icons rotate through a set)
+  const serviceIcons = [
+    `<svg class="service-icon" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="24" fill="#F4A584" opacity="0.4"/><path d="M18 12 L38 12 L42 16 L42 44 L14 44 L14 16 Z" stroke="#2C5E4F" stroke-width="2" stroke-linejoin="round" fill="#F8F1E4"/><path d="M20 24 L36 24 M20 30 L36 30 M20 36 L30 36" stroke="#E8704C" stroke-width="2" stroke-linecap="round"/></svg>`,
+    `<svg class="service-icon" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="24" fill="#A8C4AE" opacity="0.5"/><line x1="14" y1="44" x2="14" y2="14" stroke="#2C5E4F" stroke-width="2" stroke-linecap="round"/><line x1="14" y1="44" x2="44" y2="44" stroke="#2C5E4F" stroke-width="2" stroke-linecap="round"/><rect x="20" y="30" width="6" height="14" fill="#E8704C"/><rect x="30" y="22" width="6" height="22" fill="#D4A341"/><rect x="40" y="34" width="3" height="10" fill="#2C5E4F"/></svg>`,
+    `<svg class="service-icon" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="24" fill="#F8D4BE"/><path d="M28 10 L44 18 L44 28 Q44 40 28 46 Q12 40 12 28 L12 18 Z" stroke="#2C5E4F" stroke-width="2" stroke-linejoin="round" fill="#F8F1E4"/><path d="M22 28 L26 32 L34 22" stroke="#E8704C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    `<svg class="service-icon" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="24" fill="#D4A341" opacity="0.25"/><rect x="12" y="16" width="32" height="24" rx="3" stroke="#2C5E4F" stroke-width="2" fill="#F8F1E4"/><line x1="12" y1="24" x2="44" y2="24" stroke="#2C5E4F" stroke-width="2"/><circle cx="38" cy="32" r="2.5" fill="#E8704C"/></svg>`
+  ];
+
+  const serviceItemsHTML = cfg.services.items.map((s, i) => {
+    const bullets = (s.bullets && s.bullets.length)
+      ? `<ul>${s.bullets.map(b => `<li>${safe(b)}</li>`).join('')}</ul>`
+      : '';
+    const delay = (i % 2 === 0) ? 'delay-1' : 'delay-2';
+    return `
+      <article class="service-card reveal ${delay}">
+        <span class="num">${safe(s.label)}</span>
+        <h3>${safe(s.title)}</h3>
+        <p>${safe(s.description)}</p>
+        ${bullets}
+        ${serviceIcons[i % serviceIcons.length]}
+      </article>
+    `;
+  }).join('');
+
+  // Differentiators
+  const diffHTML = cfg.differentiators.items.map((d, i) =>
+    `<div class="diff-item reveal delay-${i+1}">
+      <div class="badge">${safe(d.badge)}</div>
+      <h4>${safe(d.title)}</h4>
+      <p>${safe(d.description)}</p>
+    </div>`
+  ).join('');
+
+  // Case study paragraphs
+  const caseParasHTML = cfg.caseStudy.paragraphs.map(p => `<p>${safe(p)}</p>`).join('');
+
+  // Audience items
+  const audienceIcons = [
+    `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 6 L38 12 L38 26 Q38 36 24 42 Q10 36 10 26 L10 12 Z" stroke-linejoin="round" fill="#F8F1E4" fill-opacity="0.3"/><path d="M24 16 L24 30 M17 23 L31 23" stroke-linecap="round"/></svg>`,
+    `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="14" width="32" height="26" rx="2" fill="#F8F1E4" fill-opacity="0.3"/><path d="M16 14 L16 10 Q16 8 18 8 L30 8 Q32 8 32 10 L32 14" stroke-linecap="round"/></svg>`,
+    `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6 L30 6 L36 12 L36 42 L12 42 Z" stroke-linejoin="round" fill="#F8F1E4" fill-opacity="0.3"/><path d="M16 18 L32 18 M16 24 L32 24 M16 30 L28 30" stroke-linecap="round"/></svg>`,
+    `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><circle cx="24" cy="18" r="7" fill="#F8F1E4" fill-opacity="0.3"/><path d="M10 40 Q10 28 24 28 Q38 28 38 40" stroke-linecap="round"/></svg>`
+  ];
+  const audienceHTML = cfg.audience.items.map((item, i) =>
+    `<div class="audience-tile reveal delay-${i+1}">
+      ${audienceIcons[i % audienceIcons.length]}
+      <h5>${safe(item)}</h5>
+    </div>`
+  ).join('');
+
+  // Footer service links
+  const footerServiceLinksHTML = cfg.footer.servicesLinks.map(l =>
+    `<a href="${safe(l.href)}">${safe(l.label)}</a>`
+  ).join('');
+
+  // Footer contact links — auto-generated from contact info
+  const footerContactLinksHTML = `
+    <a href="mailto:${safe(cfg.contact.email)}">${safe(cfg.contact.email)}</a>
+    <a href="tel:${safe(cfg.contact.phoneHref)}">${safe(cfg.contact.phone)}</a>
+    <a href="#contact">Request an Estimate</a>
+  `;
+
+  /* ---------- FORM ACTION/METHOD ---------- */
+  let formAction = '';
+  let formMethod = 'POST';
+  let formExtraInputs = '';
+  let netlifyAttr = '';
+
+  const provider = (cfg.contact.formProvider || 'demo').toLowerCase();
+  if (provider === 'formspree') {
+    formAction = cfg.contact.formAction || '';
+  } else if (provider === 'web3forms') {
+    formAction = 'https://api.web3forms.com/submit';
+    formExtraInputs = `<input type="hidden" name="access_key" value="${safe(cfg.contact.formAction || '')}">`;
+  } else if (provider === 'netlify') {
+    netlifyAttr = 'data-netlify="true" name="contact"';
+    formExtraInputs = `<input type="hidden" name="form-name" value="contact">`;
+  } else if (provider === 'mailto') {
+    formAction = `mailto:${cfg.contact.email}`;
+    formMethod = 'GET';
+  }
+
+  /* ---------- BUILD THE PAGE ---------- */
+  app.innerHTML = `
+    <nav>
+      <a href="#top" class="logo-mark" aria-label="${safe(cfg.brand.logoAlt)}">
+        ${renderLogo(44)}
+        <div class="logo-text">
+          <div class="name">${safe(cfg.brand.name)}</div>
+          <div class="sub">${safe(cfg.brand.tagline)}</div>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        ${navLinksHTML}
+        <a href="${safe(cfg.nav.ctaHref)}" class="nav-cta">${safe(cfg.nav.ctaLabel)}</a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </nav>
+
+    <section class="hero" id="top">
+      <svg class="deco deco-palm-1" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 100 280 Q 95 200 100 140" stroke="#A37A2E" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M 100 140 Q 40 100 15 60 Q 35 85 50 85 Q 30 70 20 40 Q 50 70 70 80 Q 55 55 55 25 Q 75 60 90 90 Q 95 60 110 35 Q 105 70 105 100 Q 130 75 160 55 Q 140 85 125 105 Q 155 90 185 80 Q 155 105 135 120 Q 170 120 195 130 Q 160 135 130 140 Z" fill="#2C5E4F"/>
+        <g fill="#4A7F6E" opacity="0.8"><circle cx="105" cy="135" r="6"/><circle cx="95" cy="130" r="5"/><circle cx="110" cy="142" r="5"/></g>
+      </svg>
+      <svg class="deco deco-palm-2" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 100 280 Q 95 200 100 140" stroke="#A37A2E" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M 100 140 Q 40 100 15 60 Q 35 85 50 85 Q 30 70 20 40 Q 50 70 70 80 Q 55 55 55 25 Q 75 60 90 90 Q 95 60 110 35 Q 105 70 105 100 Q 130 75 160 55 Q 140 85 125 105 Q 155 90 185 80 Q 155 105 135 120 Q 170 120 195 130 Q 160 135 130 140 Z" fill="#2C5E4F"/>
+      </svg>
+      <svg class="deco deco-leaf-1" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M 50 10 Q 20 50 20 100 Q 20 140 50 150 Q 80 140 80 100 Q 80 50 50 10 Z" fill="#4A7F6E"/><path d="M 50 20 L 50 145" stroke="#2C5E4F" stroke-width="1.5" fill="none"/></svg>
+      <svg class="deco deco-leaf-2" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M 50 8 Q 15 35 20 80 Q 28 108 50 112 Q 72 108 80 80 Q 85 35 50 8 Z" fill="#A8C4AE"/><path d="M 50 15 L 50 108" stroke="#2C5E4F" stroke-width="1.2" fill="none" opacity="0.7"/></svg>
+      <svg class="deco deco-flower" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <ellipse cx="40" cy="16" rx="9" ry="14" fill="#E8704C"/>
+        <ellipse cx="40" cy="16" rx="9" ry="14" fill="#E8704C" transform="rotate(60 40 40)"/>
+        <ellipse cx="40" cy="16" rx="9" ry="14" fill="#E8704C" transform="rotate(120 40 40)"/>
+        <ellipse cx="40" cy="16" rx="9" ry="14" fill="#E8704C" transform="rotate(180 40 40)"/>
+        <ellipse cx="40" cy="16" rx="9" ry="14" fill="#E8704C" transform="rotate(240 40 40)"/>
+        <ellipse cx="40" cy="16" rx="9" ry="14" fill="#E8704C" transform="rotate(300 40 40)"/>
+        <circle cx="40" cy="40" r="8" fill="#D4A341"/>
+        <circle cx="40" cy="40" r="3" fill="#A37A2E"/>
+      </svg>
+      <svg class="deco deco-sun" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="60" cy="60" r="28" fill="#D4A341" opacity="0.9"/>
+        <g stroke="#D4A341" stroke-width="3" stroke-linecap="round" fill="none">
+          <line x1="60" y1="8" x2="60" y2="22"/><line x1="60" y1="98" x2="60" y2="112"/>
+          <line x1="8" y1="60" x2="22" y2="60"/><line x1="98" y1="60" x2="112" y2="60"/>
+          <line x1="22" y1="22" x2="32" y2="32"/><line x1="88" y1="88" x2="98" y2="98"/>
+          <line x1="22" y1="98" x2="32" y2="88"/><line x1="88" y1="32" x2="98" y2="22"/>
+        </g>
+      </svg>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow-wrap">
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow">${safe(cfg.hero.eyebrow)}</span>
+          </div>
+          <h1 class="display">
+            <span class="line"><span>${safe(cfg.hero.headlineLine1)}</span></span>
+            <span class="line"><span class="accent-script">${safe(cfg.hero.headlineLine2)}</span></span>
+            <span class="line"><span>${safe(cfg.hero.headlineLine3)}</span></span>
+          </h1>
+          <p class="hero-sub">${safe(cfg.hero.subheadline)}</p>
+          <div class="hero-cta-group">
+            <a href="${safe(cfg.hero.ctaHref)}" class="btn btn-primary">
+              ${safe(cfg.hero.ctaLabel)}
+              <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <span class="script-note">
+              <svg width="28" height="20" viewBox="0 0 40 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 15 Q15 5 30 15"/><path d="M25 10 L30 15 L25 20"/></svg>
+              ${safe(cfg.hero.sideNote)}
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="card card-hero">
+            <div>
+              <div class="eyebrow-c">${safe(cfg.hero.card.eyebrow)}</div>
+              <div class="big-num">${safe(cfg.hero.card.bigTextLine1)}<em>${safe(cfg.hero.card.bigTextLine2)}</em></div>
+              <div class="caption">${safe(cfg.hero.card.caption)}</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:10px;opacity:0.7;letter-spacing:0.16em;font-weight:600;">
+              <span>MESSY</span><span>ACCOUNTANT-READY</span>
+            </div>
+          </div>
+          <div class="card card-float card-1">
+            <div class="chip-label">Reconciled</div>
+            <div class="chip-val">$ Balanced</div>
+            <div class="chip-sub">every time ✿</div>
+          </div>
+          <div class="card card-float card-2">
+            <div class="check-row"><span class="check-dot"></span>P&L Ready</div>
+            <div class="check-row"><span class="check-dot"></span>Balance Sheet</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">${marqueeHTML}</div>
+    </div>
+
+    <section class="about" id="approach">
+      <div class="about-grid">
+        <div class="reveal">
+          <div class="section-eyebrow-wrap">
+            <span class="section-eyebrow-line"></span>
+            <span class="section-eyebrow">${safe(cfg.about.eyebrow)}</span>
+          </div>
+          <h2 class="section-title display">${safe(cfg.about.title)}</h2>
+        </div>
+        <div class="reveal delay-1">
+          ${aboutParas}
+          <p class="pull-quote">${safe(cfg.about.pullQuote)}</p>
+        </div>
+      </div>
+
+      <div class="owner-block reveal">
+        <div class="owner-photo-wrap">
+          ${ownerPhotoHTML}
+          <div class="owner-tag">✿ ${safe(cfg.about.owner.name)}</div>
+        </div>
+        <div class="owner-copy">
+          <div class="owner-name">${safe(cfg.about.owner.name)}</div>
+          <div class="owner-title">${safe(cfg.about.owner.title)}</div>
+          <p class="owner-quote">${safe(cfg.about.owner.quote)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="services">
+      <div class="wrap">
+        <div class="services-head reveal">
+          <div class="section-eyebrow-wrap">
+            <span class="section-eyebrow-line"></span>
+            <span class="section-eyebrow">${safe(cfg.services.eyebrow)}</span>
+          </div>
+          <h2 class="section-title display">${safe(cfg.services.title)}</h2>
+          <p class="section-lede">${safe(cfg.services.lede)}</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card feature reveal">
+            <div>
+              <span class="num">${safe(cfg.services.featured.label)}</span>
+              <h3>${safe(cfg.services.featured.title)}</h3>
+              <p>${safe(cfg.services.featured.description)}</p>
+            </div>
+            <ul>${featBullets}</ul>
+            <svg class="service-icon" viewBox="0 0 56 56" fill="none" style="top: 36px; right: 36px; width: 60px; height: 60px;">
+              <circle cx="28" cy="28" r="24" fill="#D4A341" opacity="0.2"/>
+              <path d="M14 14 L42 14 L42 42 L14 42 Z" stroke="#D4A341" stroke-width="2"/>
+              <path d="M14 22 L42 22" stroke="#D4A341" stroke-width="2"/>
+              <path d="M20 14 L20 42" stroke="#D4A341" stroke-width="2"/>
+              <path d="M24 30 L27 33 L36 24" stroke="#E8704C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </article>
+          ${serviceItemsHTML}
+        </div>
+      </div>
+    </section>
+
+    <section class="differentiators">
+      <div class="wrap">
+        <div class="diff-head reveal">
+          <div class="section-eyebrow-wrap">
+            <span class="section-eyebrow-line"></span>
+            <span class="section-eyebrow">${safe(cfg.differentiators.eyebrow)}</span>
+          </div>
+          <h2 class="section-title display">${safe(cfg.differentiators.title)}</h2>
+        </div>
+        <div class="diff-grid">${diffHTML}</div>
+      </div>
+    </section>
+
+    <section class="case-study" id="story">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="section-eyebrow-wrap">
+            <span class="section-eyebrow-line"></span>
+            <span class="section-eyebrow">${safe(cfg.caseStudy.eyebrow)}</span>
+          </div>
+          <h2 class="section-title display">${safe(cfg.caseStudy.titleLine1)}<br/><span class="title-script">${safe(cfg.caseStudy.titleLine2)}</span></h2>
+        </div>
+        <div class="case-grid">
+          <div class="narrative reveal delay-1">
+            ${caseParasHTML}
+            <p class="quote">${safe(cfg.caseStudy.quote)}</p>
+          </div>
+          <div class="before-after reveal delay-2">
+            <div class="ba-row">
+              <div class="ba-col before">
+                <div class="ba-label">${safe(cfg.caseStudy.comparison.row1.beforeLabel)}</div>
+                <div class="ba-big">${safe(cfg.caseStudy.comparison.row1.beforeValue)}</div>
+                <div class="ba-cap">${safe(cfg.caseStudy.comparison.row1.beforeCaption)}</div>
+              </div>
+              <div class="ba-col after">
+                <div class="ba-label">${safe(cfg.caseStudy.comparison.row1.afterLabel)}</div>
+                <div class="ba-big">${safe(cfg.caseStudy.comparison.row1.afterValue)}</div>
+                <div class="ba-cap">${safe(cfg.caseStudy.comparison.row1.afterCaption)}</div>
+              </div>
+            </div>
+            <div class="ba-divider"></div>
+            <div class="ba-row">
+              <div class="ba-col before">
+                <div class="ba-label">${safe(cfg.caseStudy.comparison.row2.beforeLabel)}</div>
+                <div class="ba-big">${safe(cfg.caseStudy.comparison.row2.beforeValue)}</div>
+                <div class="ba-cap">${safe(cfg.caseStudy.comparison.row2.beforeCaption)}</div>
+              </div>
+              <div class="ba-col after">
+                <div class="ba-label">${safe(cfg.caseStudy.comparison.row2.afterLabel)}</div>
+                <div class="ba-big">${safe(cfg.caseStudy.comparison.row2.afterValue)}</div>
+                <div class="ba-cap">${safe(cfg.caseStudy.comparison.row2.afterCaption)}</div>
+              </div>
+            </div>
+            <div class="ba-divider"></div>
+            <p class="ba-result">${safe(cfg.caseStudy.comparison.resultPrefix)} <span class="result-script">${safe(cfg.caseStudy.comparison.resultScript)}</span> ${safe(cfg.caseStudy.comparison.resultSuffix)}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="audience-band">
+      <div class="wrap">
+        <div class="audience-head reveal">
+          <div class="section-eyebrow-wrap">
+            <span class="section-eyebrow-line"></span>
+            <span class="section-eyebrow">${safe(cfg.audience.eyebrow)}</span>
+          </div>
+          <h2 class="section-title display">${safe(cfg.audience.title)}</h2>
+        </div>
+        <div class="audience-grid">${audienceHTML}</div>
+      </div>
+    </section>
+
+    <section class="contact-sec" id="contact">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="section-eyebrow-wrap">
+              <span class="section-eyebrow-line"></span>
+              <span class="section-eyebrow">${safe(cfg.contact.eyebrow)}</span>
+            </div>
+            <h2 class="section-title display">${safe(cfg.contact.title)}</h2>
+            <p>${safe(cfg.contact.description)}</p>
+            <p class="script-note-big">${safe(cfg.contact.scriptNote)}</p>
+            <div class="contact-detail">
+              <div class="label">Email</div>
+              <a href="mailto:${safe(cfg.contact.email)}">${safe(cfg.contact.email)}</a>
+            </div>
+            <div class="contact-detail">
+              <div class="label">Phone</div>
+              <a href="tel:${safe(cfg.contact.phoneHref)}">${safe(cfg.contact.phone)}</a>
+            </div>
+          </div>
+
+          <form class="reveal delay-1" id="contactForm" action="${safe(formAction)}" method="${formMethod}" ${netlifyAttr}>
+            <div class="form-badge">${safe(cfg.contact.formBadge)}</div>
+            ${formExtraInputs}
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell us about your cleanup needs *</label>
+              <textarea id="message" name="message" placeholder="How far behind are you? What type of business? Any specific concerns?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              ${safe(cfg.contact.submitLabel)}
+              <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+            <p class="form-note">${safe(cfg.contact.formNote)}</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-logo">
+            ${renderLogo(52)}
+            <div style="line-height:1;">
+              <div class="footer-name">${safe(cfg.brand.name)}</div>
+              <div class="footer-sub">${safe(cfg.brand.tagline)}</div>
+            </div>
+          </div>
+          <p>${safe(cfg.brand.footerTagline)}</p>
+        </div>
+        <div class="footer-col">
+          <h6>${safe(cfg.footer.servicesHeading)}</h6>
+          ${footerServiceLinksHTML}
+        </div>
+        <div class="footer-col">
+          <h6>${safe(cfg.footer.contactHeading)}</h6>
+          ${footerContactLinksHTML}
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> ${safe(cfg.footer.copyright)}</span>
+        <span class="script-sig">${safe(cfg.footer.signature)}</span>
+      </div>
+    </footer>
+  `;
+
+  /* ---------- WIRE UP INTERACTIONS ---------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const toggle = document.getElementById('mobileToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Form handling
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', async function(e) {
+    const btn = form.querySelector('button');
+    const orig = btn.innerHTML;
+
+    // Demo mode: just show success
+    if (provider === 'demo') {
+      e.preventDefault();
+      btn.innerHTML = 'Sending...';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.innerHTML = '✿ Message Sent — (Demo mode — set formProvider in config.js to enable)';
+        setTimeout(() => {
+          btn.innerHTML = orig;
+          btn.disabled = false;
+          form.reset();
+        }, 4000);
+      }, 800);
+      return;
+    }
+
+    // Formspree & Web3Forms: submit via fetch so we can show inline success
+    if (provider === 'formspree' || provider === 'web3forms') {
+      e.preventDefault();
+
+      // Warn if endpoint is still a placeholder
+      if (!formAction || formAction.includes('YOUR_FORM_ID') || formAction === 'YOUR_ACCESS_KEY_HERE') {
+        btn.innerHTML = '⚠️ Form not configured — see config.js';
+        setTimeout(() => { btn.innerHTML = orig; }, 4000);
+        return;
+      }
+
+      btn.innerHTML = 'Sending...';
+      btn.disabled = true;
+
+      try {
+        const data = new FormData(form);
+        const res = await fetch(formAction, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          btn.innerHTML = '✿ Message Sent — We\'ll be in touch soon!';
+          form.reset();
+        } else {
+          btn.innerHTML = '⚠️ Something went wrong — please email us instead';
+        }
+      } catch (err) {
+        btn.innerHTML = '⚠️ Network error — please email us instead';
+      }
+
+      setTimeout(() => {
+        btn.innerHTML = orig;
+        btn.disabled = false;
+      }, 5000);
+      return;
+    }
+
+    // Netlify & mailto: let the form submit naturally (browser handles it)
+  });
+})();
+</script>
+
+</body>
+</html>

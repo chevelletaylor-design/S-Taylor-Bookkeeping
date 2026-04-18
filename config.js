@@ -1,0 +1,301 @@
+/* =========================================================================
+   S. TAYLOR BOOKKEEPING — SITE CONFIG
+   =========================================================================
+   Edit ANY text, image, or link in this file — the site updates automatically.
+   You never need to touch index.html.
+
+   TIPS:
+   - Keep the quote marks and commas exactly where they are.
+   - For images, upload to /assets/images/ and reference like: "assets/images/sophia.jpg"
+   - To make text italic/script (the orange handwritten look), wrap it in
+     <em>...</em> like: "Clean, <em>accountant-ready</em> books."
+   - To add a line break in a heading, use <br/>
+   ========================================================================= */
+
+const SITE_CONFIG = {
+
+  /* -----------------------------------------------------------------------
+     BRAND — Logo + business name
+     ----------------------------------------------------------------------- */
+  brand: {
+    // Upload a new logo to /assets/images/ and change this path.
+    // Recommended: square SVG or PNG with transparent background.
+    // Leave as "default" to use the built-in hibiscus logo.
+    logo: "default",  // e.g. "assets/images/my-logo.svg"
+    logoAlt: "S. Taylor Bookkeeping",
+
+    name: "S. Taylor",              // Main brand name (shown in script font)
+    tagline: "Bookkeeping",         // Small uppercase text under the name
+    footerTagline: "Cleanup and catch-up bookkeeping for nonprofits and small businesses. Clean records, delivered fast ✿"
+  },
+
+  /* -----------------------------------------------------------------------
+     NAVIGATION — The top menu
+     ----------------------------------------------------------------------- */
+  nav: {
+    links: [
+      { label: "Services",   href: "#services"  },
+      { label: "Approach",   href: "#approach"  },
+      { label: "Case Study", href: "#story"     }
+    ],
+    ctaLabel: "Get an Estimate →",
+    ctaHref:  "#contact"
+  },
+
+  /* -----------------------------------------------------------------------
+     HERO — The big headline at the top of the page
+     Use <em>...</em> around words you want to appear in orange script.
+     ----------------------------------------------------------------------- */
+  hero: {
+    eyebrow:     "Cleanup & Catch-Up Bookkeeping",      // Small tag above headline
+    headlineLine1: "Clean,",                              // Line 1 (serif)
+    headlineLine2: "accountant-ready",                    // Line 2 (always in script)
+    headlineLine3: "books.",                              // Line 3 (serif)
+    subheadline: "Months or years behind? Don't worry about it. We methodically overhaul disorganized financials and deliver pristine records — so tax season stops being the thing you dread.",
+    ctaLabel:    "Get Your Cleanup Estimate",
+    ctaHref:     "#contact",
+    sideNote:    "takes 2 mins!",                         // Handwritten note next to button
+
+    // The visual card on the right side of the hero
+    card: {
+      eyebrow:  "Cleanup Progress",
+      bigTextLine1: "7 yrs",
+      bigTextLine2: "→ 1 month",                          // This line is gold/script
+      caption:  "Real client, real results."
+    }
+  },
+
+  /* -----------------------------------------------------------------------
+     MARQUEE — Scrolling banner under the hero
+     ----------------------------------------------------------------------- */
+  marquee: [
+    "Clean Records",
+    "Reduced Stress",
+    "Tax-Season Ready",
+    "Accountant-Approved",
+    "Years Caught Up"
+  ],
+
+  /* -----------------------------------------------------------------------
+     ABOUT / APPROACH — The section with Sophia's photo
+     Use <em>...</em> for script styling
+     ----------------------------------------------------------------------- */
+  about: {
+    eyebrow: "About The Practice",
+    title:   "We specialize in the <em>cleanup</em> — not the routine.",
+
+    // The main paragraphs (add as many as you want)
+    paragraphs: [
+      "Most bookkeepers handle ongoing maintenance. S. Taylor Bookkeeping is different: we come in when things have already gotten away from you, and we restore order.",
+      "Many clients arrive feeling overwhelmed — behind by months or years, unsure where to start, and nervous about the cost. We assess the situation, lay out a clear plan, and methodically bring everything current."
+    ],
+
+    // Pull-quote at the bottom of the paragraphs (bordered quote)
+    pullQuote: "Our goal is simple: <em>clean records,</em> reduced stress, and readiness for tax filing.",
+
+    // SOPHIA'S PROFILE
+    owner: {
+      // Upload photo to /assets/images/ and change this path
+      // Recommended size: 600x600px or larger, square aspect ratio
+      photo: "assets/images/sophia.jpg",
+      photoAlt: "Sophia Taylor, founder of S. Taylor Bookkeeping",
+      name: "Sophia Taylor",
+      title: "Founder & Lead Bookkeeper",    // Placeholder — edit as you like
+      quote: "I built this practice because I saw too many business owners and nonprofits treated like they should've known better. You didn't. It's fixable. That's what I'm here for."
+    }
+  },
+
+  /* -----------------------------------------------------------------------
+     SERVICES SECTION
+     ----------------------------------------------------------------------- */
+  services: {
+    eyebrow:  "What We Do",
+    title:    "Everything needed to get your books <em>accountant-ready.</em>",
+    lede:     "From disorganized receipts and missed reconciliations to polished financial reports — here's exactly how we step in.",
+
+    // The big featured service card
+    featured: {
+      label:       "~ the flagship",
+      title:       "Bookkeeping <em>Cleanup</em> & Catch-Up",
+      description: "Months behind. Years behind. It happens — and it's fixable. We come in, assess the damage, and bring everything current without skipping steps.",
+      bullets: [
+        "Assess current books to identify gaps and inconsistencies",
+        "Reconcile accounts and correct misclassifications",
+        "Bring financials fully up to date, quickly",
+        "Deliver clean, reliable records your accountant can use immediately"
+      ]
+    },
+
+    // The 4 smaller service cards
+    items: [
+      {
+        label:       "~ service 02",
+        title:       "Accountant-Ready <em>Prep</em>",
+        description: "We prepare your financials so your accountant can file confidently, advise without hesitation, and avoid costly corrections later.",
+        bullets: [
+          "File taxes with confidence",
+          "Clean, reviewable ledgers",
+          "No surprises at year-end"
+        ]
+      },
+      {
+        label:       "~ service 03",
+        title:       "Financial <em>Reporting</em>",
+        description: "Receive reports that actually help you understand your business — not just satisfy the IRS.",
+        bullets: [
+          "Profit & Loss Statements",
+          "Balance Sheets",
+          "Cash Flow Summaries"
+        ]
+      },
+      {
+        label:       "~ service 04",
+        title:       "Bank & Credit <em>Reconciliation</em>",
+        description: "We ensure your financial software matches every account — bank, credit card, PayPal, Stripe — eliminating surprises and hidden inconsistencies.",
+        bullets: []
+      },
+      {
+        label:       "~ service 05",
+        title:       "Accounts <em>Payable & Receivable</em>",
+        description: "We organize and record bills, payments, invoices, and customer receipts so you have a clear picture of cash flow and obligations.",
+        bullets: []
+      }
+    ]
+  },
+
+  /* -----------------------------------------------------------------------
+     DIFFERENTIATORS — "What Sets Us Apart"
+     ----------------------------------------------------------------------- */
+  differentiators: {
+    eyebrow: "What Sets Us Apart",
+    title:   "Four principles that <em>shape the work.</em>",
+    items: [
+      { badge: "i",   title: "Efficiency without shortcuts",  description: "Work is completed in a timely manner — never at the expense of accuracy." },
+      { badge: "ii",  title: "A clear process",                description: "Clients always know what to expect, what's needed, and where we are." },
+      { badge: "iii", title: "Accountant-ready results",       description: "Records arrive clean, organized, and immediately usable — no cleanup required." },
+      { badge: "iv",  title: "Cost-conscious approach",        description: "Realistic solutions without unnecessary expense or inflated hours." }
+    ]
+  },
+
+  /* -----------------------------------------------------------------------
+     CASE STUDY / CLIENT STORY
+     ----------------------------------------------------------------------- */
+  caseStudy: {
+    eyebrow:        "Real Client Story",
+    titleLine1:     "Seven years behind.",
+    titleLine2:     "Caught up in one month.",          // This line is in gold script
+
+    // Use <strong>...</strong> around words you want bolded in gold
+    paragraphs: [
+      "A nonprofit organization approached Taylor Bookkeeping with financial records that were <strong>over seven years behind.</strong> They assumed the cleanup would take months — maybe a full year — and cost thousands.",
+      "We assessed their records, implemented a structured cleanup process, brought all financials fully up to date, and delivered accountant-ready books <strong>within one month</strong> — at a cost well below what they'd feared."
+    ],
+    quote: "Clarity, compliance, and peace of mind — far sooner and cheaper than anticipated.",
+
+    // Before/After comparison card
+    comparison: {
+      row1: {
+        beforeLabel: "Expected",
+        beforeValue: "12 months",
+        beforeCaption: "Client's initial estimate",
+        afterLabel:  "Delivered",
+        afterValue:  "1 month",
+        afterCaption: "Fully reconciled & reported"
+      },
+      row2: {
+        beforeLabel: "Expected Cost",
+        beforeValue: "$$$$",
+        beforeCaption: "Thousands feared",
+        afterLabel:  "Actual Cost",
+        afterValue:  "$$",
+        afterCaption: "Well below expectation"
+      },
+      // The result line at the bottom
+      resultPrefix: "Result:",
+      resultScript: "Clean books. Clear mind.",         // Script/gold text
+      resultSuffix: "Ready to file."
+    }
+  },
+
+  /* -----------------------------------------------------------------------
+     AUDIENCE — "Who We Serve"
+     ----------------------------------------------------------------------- */
+  audience: {
+    eyebrow: "Who We Serve",
+    title:   "Made for those who need a <em>reset.</em>",
+    items: [
+      "Nonprofits with years of unorganized records",
+      "Small businesses behind on bookkeeping",
+      "Orgs preparing for tax filing or audits",
+      "Anyone who needs cleanup before their accountant"
+    ]
+  },
+
+  /* -----------------------------------------------------------------------
+     CONTACT SECTION + FORM
+     ----------------------------------------------------------------------- */
+  contact: {
+    eyebrow:    "Get In Touch",
+    title:      "Ready for a <em>fresh start?</em>",
+    description: "Fill out the form and we'll respond within 24 hours with next steps and a realistic estimate.",
+    scriptNote: "No obligation, no judgment about how behind you are. ✿",
+
+    email:      "sophia@staylorbookkeeping.com",
+    phone:      "(917) 543-5276",
+    phoneHref:  "+19175435276",                        // digits only for click-to-call
+
+    formBadge:  "Aloha ✿",
+    submitLabel: "Send Message",
+    formNote:   "We respond within 24 hours — even during tax season ✿",
+
+    /* =========================================================================
+       FORM SETUP — Formspree
+       =========================================================================
+       This form uses Formspree (formspree.io). Free tier = 50 submissions/month.
+
+       HOW TO CONNECT THIS FORM TO SOPHIA'S EMAIL:
+       ─────────────────────────────────────────────────────────
+       1. Go to https://formspree.io and sign up with sophia@staylorbookkeeping.com
+       2. Click "+ New Form"
+       3. Name it something like "Bookkeeping Cleanup Inquiries"
+       4. Formspree will show a form endpoint that looks like:
+            https://formspree.io/f/mvgpzyqk   (the letters/numbers will be different)
+       5. Copy that full URL and paste it as the formAction value below
+       6. Save this file
+       7. Submit a test message on the live site — Formspree will ask Sophia to
+          confirm her email the first time, then submissions flow in automatically
+
+       That's it. No server, no code changes, no deployment step.
+
+       SWITCHING PROVIDERS LATER (optional):
+       Change formProvider to one of: "formspree" | "netlify" | "web3forms" | "mailto" | "demo"
+       ========================================================================= */
+    formProvider: "formspree",
+
+    // ⬇️ PASTE YOUR FORMSPREE ENDPOINT HERE ⬇️
+    formAction:   "https://formspree.io/f/YOUR_FORM_ID"
+  },
+
+  /* -----------------------------------------------------------------------
+     FOOTER
+     ----------------------------------------------------------------------- */
+  footer: {
+    servicesHeading: "Services",
+    servicesLinks: [
+      { label: "Cleanup & Catch-Up",  href: "#services" },
+      { label: "Accountant Prep",     href: "#services" },
+      { label: "Reconciliation",      href: "#services" },
+      { label: "Financial Reporting", href: "#services" }
+    ],
+    contactHeading: "Say hello",
+    contactLinks: [
+      // Email, phone, and request-estimate links are auto-generated from contact info above
+    ],
+    copyright: "S. Taylor Bookkeeping. All rights reserved.",
+    signature: "Made with aloha ✿"
+  }
+
+};
+
+// Make config available to index.html (don't edit this)
+if (typeof window !== 'undefined') window.SITE_CONFIG = SITE_CONFIG;
