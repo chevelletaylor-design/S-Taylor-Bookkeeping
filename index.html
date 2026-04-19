@@ -384,8 +384,10 @@
     .ba-col .ba-big { font-size: 32px; }
 
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-    form { padding: 36px 24px; }
+    form { padding: 36px 24px; max-width: 100%; box-sizing: border-box; overflow: hidden; }
+    form .form-badge { right: 20px; top: -16px; font-size: 16px; padding: 6px 14px; }
     .form-row { grid-template-columns: 1fr; gap: 0; }
+    .contact-sec::before, .contact-sec::after { display: none; }
 
     .footer-grid { grid-template-columns: 1fr; gap: 40px; }
     .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
