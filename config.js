@@ -3,35 +3,18 @@
    =========================================================================
    Edit ANY text, image, or link in this file — the site updates automatically.
    You never need to touch index.html.
-
-   TIPS:
-   - Keep the quote marks and commas exactly where they are.
-   - For images, upload to /assets/images/ and reference like: "assets/images/sophia.jpg"
-   - To make text italic/script (the orange handwritten look), wrap it in
-     <em>...</em> like: "Clean, <em>accountant-ready</em> books."
-   - To add a line break in a heading, use <br/>
    ========================================================================= */
 
 const SITE_CONFIG = {
 
-  /* -----------------------------------------------------------------------
-     BRAND — Logo + business name
-     ----------------------------------------------------------------------- */
   brand: {
-    // Upload a new logo to /assets/images/ and change this path.
-    // Recommended: square SVG or PNG with transparent background.
-    // Leave as "default" to use the built-in hibiscus logo.
     logo: "default",  // e.g. "assets/images/my-logo.svg"
     logoAlt: "S. Taylor Bookkeeping",
-
-    name: "S. Taylor",              // Main brand name (shown in script font)
-    tagline: "Bookkeeping",         // Small uppercase text under the name
+    name: "S. Taylor",
+    tagline: "Bookkeeping",
     footerTagline: "Cleanup and catch-up bookkeeping for nonprofits and small businesses. Clean records, delivered fast ✿"
   },
 
-  /* -----------------------------------------------------------------------
-     NAVIGATION — The top menu
-     ----------------------------------------------------------------------- */
   nav: {
     links: [
       { label: "Services",   href: "#services"  },
@@ -42,32 +25,24 @@ const SITE_CONFIG = {
     ctaHref:  "#contact"
   },
 
-  /* -----------------------------------------------------------------------
-     HERO — The big headline at the top of the page
-     Use <em>...</em> around words you want to appear in orange script.
-     ----------------------------------------------------------------------- */
   hero: {
-    eyebrow:     "Cleanup & Catch-Up Bookkeeping",      // Small tag above headline
-    headlineLine1: "Clean,",                              // Line 1 (serif)
-    headlineLine2: "accountant-ready",                    // Line 2 (always in script)
-    headlineLine3: "books.",                              // Line 3 (serif)
+    eyebrow:     "Cleanup & Catch-Up Bookkeeping",
+    headlineLine1: "Clean,",
+    headlineLine2: "accountant-ready",
+    headlineLine3: "books.",
     subheadline: "Months or years behind? Don't worry about it. We methodically overhaul disorganized financials and deliver pristine records — so tax season stops being the thing you dread.",
     ctaLabel:    "Get Your Cleanup Estimate",
     ctaHref:     "#contact",
-    sideNote:    "takes 2 mins!",                         // Handwritten note next to button
+    sideNote:    "takes 2 mins!",
 
-    // The visual card on the right side of the hero
     card: {
       eyebrow:  "Cleanup Progress",
       bigTextLine1: "7 yrs",
-      bigTextLine2: "→ 1 month",                          // This line is gold/script
+      bigTextLine2: "→ 1 month",
       caption:  "Real client, real results."
     }
   },
 
-  /* -----------------------------------------------------------------------
-     MARQUEE — Scrolling banner under the hero
-     ----------------------------------------------------------------------- */
   marquee: [
     "Clean Records",
     "Reduced Stress",
@@ -76,44 +51,29 @@ const SITE_CONFIG = {
     "Years Caught Up"
   ],
 
-  /* -----------------------------------------------------------------------
-     ABOUT / APPROACH — The section with Sophia's photo
-     Use <em>...</em> for script styling
-     ----------------------------------------------------------------------- */
   about: {
     eyebrow: "About The Practice",
     title:   "We specialize in the <em>cleanup</em> — not the routine.",
-
-    // The main paragraphs (add as many as you want)
     paragraphs: [
       "Most bookkeepers handle ongoing maintenance. S. Taylor Bookkeeping is different: we come in when things have already gotten away from you, and we restore order.",
       "Many clients arrive feeling overwhelmed — behind by months or years, unsure where to start, and nervous about the cost. We assess the situation, lay out a clear plan, and methodically bring everything current."
     ],
-
-    // Pull-quote at the bottom of the paragraphs (bordered quote)
     pullQuote: "Our goal is simple: <em>clean records,</em> reduced stress, and readiness for tax filing.",
 
-    // SOPHIA'S PROFILE
     owner: {
-      // Upload photo to /assets/images/ and change this path
-      // Recommended size: 600x600px or larger, square aspect ratio
       photo: "assets/images/sophia.jpg",
       photoAlt: "Sophia Taylor, founder of S. Taylor Bookkeeping",
       name: "Sophia Taylor",
-      title: "Founder & Lead Bookkeeper",    // Placeholder — edit as you like
+      title: "Founder & Lead Bookkeeper",
       quote: "I built this practice because I saw too many business owners and nonprofits treated like they should've known better. You didn't. It's fixable. That's what I'm here for."
     }
   },
 
-  /* -----------------------------------------------------------------------
-     SERVICES SECTION
-     ----------------------------------------------------------------------- */
   services: {
     eyebrow:  "What We Do",
     title:    "Everything needed to get your books <em>accountant-ready.</em>",
     lede:     "From disorganized receipts and missed reconciliations to polished financial reports — here's exactly how we step in.",
 
-    // The big featured service card
     featured: {
       label:       "~ the flagship",
       title:       "Bookkeeping <em>Cleanup</em> & Catch-Up",
@@ -126,7 +86,6 @@ const SITE_CONFIG = {
       ]
     },
 
-    // The 4 smaller service cards
     items: [
       {
         label:       "~ service 02",
@@ -163,9 +122,6 @@ const SITE_CONFIG = {
     ]
   },
 
-  /* -----------------------------------------------------------------------
-     DIFFERENTIATORS — "What Sets Us Apart"
-     ----------------------------------------------------------------------- */
   differentiators: {
     eyebrow: "What Sets Us Apart",
     title:   "Four principles that <em>shape the work.</em>",
@@ -177,22 +133,16 @@ const SITE_CONFIG = {
     ]
   },
 
-  /* -----------------------------------------------------------------------
-     CASE STUDY / CLIENT STORY
-     ----------------------------------------------------------------------- */
   caseStudy: {
     eyebrow:        "Real Client Story",
     titleLine1:     "Seven years behind.",
-    titleLine2:     "Caught up in one month.",          // This line is in gold script
-
-    // Use <strong>...</strong> around words you want bolded in gold
+    titleLine2:     "Caught up in one month.",
     paragraphs: [
       "A nonprofit organization approached Taylor Bookkeeping with financial records that were <strong>over seven years behind.</strong> They assumed the cleanup would take months — maybe a full year — and cost thousands.",
       "We assessed their records, implemented a structured cleanup process, brought all financials fully up to date, and delivered accountant-ready books <strong>within one month</strong> — at a cost well below what they'd feared."
     ],
     quote: "Clarity, compliance, and peace of mind — far sooner and cheaper than anticipated.",
 
-    // Before/After comparison card
     comparison: {
       row1: {
         beforeLabel: "Expected",
@@ -210,16 +160,12 @@ const SITE_CONFIG = {
         afterValue:  "$$",
         afterCaption: "Well below expectation"
       },
-      // The result line at the bottom
       resultPrefix: "Result:",
-      resultScript: "Clean books. Clear mind.",         // Script/gold text
+      resultScript: "Clean books. Clear mind.",
       resultSuffix: "Ready to file."
     }
   },
 
-  /* -----------------------------------------------------------------------
-     AUDIENCE — "Who We Serve"
-     ----------------------------------------------------------------------- */
   audience: {
     eyebrow: "Who We Serve",
     title:   "Made for those who need a <em>reset.</em>",
@@ -231,9 +177,6 @@ const SITE_CONFIG = {
     ]
   },
 
-  /* -----------------------------------------------------------------------
-     CONTACT SECTION + FORM
-     ----------------------------------------------------------------------- */
   contact: {
     eyebrow:    "Get In Touch",
     title:      "Ready for a <em>fresh start?</em>",
@@ -242,43 +185,23 @@ const SITE_CONFIG = {
 
     email:      "sophia@staylorbookkeeping.com",
     phone:      "(917) 543-5276",
-    phoneHref:  "+19175435276",                        // digits only for click-to-call
+    phoneHref:  "+19175435276",
 
-    formBadge:  "Aloha ✿",
+    /* ⬇️ EDIT 4: Form badge changed from "Aloha ✿" to "Hi there ✿" */
+    formBadge:  "Hi there ✿",
     submitLabel: "Send Message",
     formNote:   "We respond within 24 hours — even during tax season ✿",
 
     /* =========================================================================
        FORM SETUP — Formspree
        =========================================================================
-       This form uses Formspree (formspree.io). Free tier = 50 submissions/month.
-
-       HOW TO CONNECT THIS FORM TO SOPHIA'S EMAIL:
-       ─────────────────────────────────────────────────────────
-       1. Go to https://formspree.io and sign up with sophia@staylorbookkeeping.com
-       2. Click "+ New Form"
-       3. Name it something like "Bookkeeping Cleanup Inquiries"
-       4. Formspree will show a form endpoint that looks like:
-            https://formspree.io/f/mvgpzyqk   (the letters/numbers will be different)
-       5. Copy that full URL and paste it as the formAction value below
-       6. Save this file
-       7. Submit a test message on the live site — Formspree will ask Sophia to
-          confirm her email the first time, then submissions flow in automatically
-
-       That's it. No server, no code changes, no deployment step.
-
-       SWITCHING PROVIDERS LATER (optional):
-       Change formProvider to one of: "formspree" | "netlify" | "web3forms" | "mailto" | "demo"
+       When ready: sign up at formspree.io, create a form, paste the endpoint
+       below as formAction, then change formProvider from "demo" to "formspree".
        ========================================================================= */
-    formProvider: "formspree",
-
-    // ⬇️ PASTE YOUR FORMSPREE ENDPOINT HERE ⬇️
+    formProvider: "demo",  // change to "formspree" when ready
     formAction:   "https://formspree.io/f/YOUR_FORM_ID"
   },
 
-  /* -----------------------------------------------------------------------
-     FOOTER
-     ----------------------------------------------------------------------- */
   footer: {
     servicesHeading: "Services",
     servicesLinks: [
@@ -288,14 +211,20 @@ const SITE_CONFIG = {
       { label: "Financial Reporting", href: "#services" }
     ],
     contactHeading: "Say hello",
-    contactLinks: [
-      // Email, phone, and request-estimate links are auto-generated from contact info above
-    ],
+    contactLinks: [],
     copyright: "S. Taylor Bookkeeping. All rights reserved.",
-    signature: "Made with aloha ✿"
+
+    /* =========================================================================
+       EDIT 3: Designer credit link (replaces "Made with aloha")
+       Links out to your website. Update the tagline/URL anytime below.
+       ========================================================================= */
+    designerCredit: {
+      tagline: "Brands, built the right way —",
+      brand:   "Designed by Chevelle",
+      url:     "https://www.bychevelle.com"
+    }
   }
 
 };
 
-// Make config available to index.html (don't edit this)
 if (typeof window !== 'undefined') window.SITE_CONFIG = SITE_CONFIG;
