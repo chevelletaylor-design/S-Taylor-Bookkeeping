@@ -10,6 +10,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
+<!-- Netlify Identity (handles admin login redirect) -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 <style>
   :root {
     --cream: #F8F1E4;
@@ -482,14 +485,20 @@
   </svg>
 </template>
 
-<script src="config.js"></script>
 <script>
-(function() {
-  const cfg = window.SITE_CONFIG;
+/* =========================================================================
+   LOAD CONFIG FROM config.json (editable via Decap CMS in /admin)
+   ========================================================================= */
+(async function() {
   const app = document.getElementById('app');
+  let cfg;
 
-  if (!cfg) {
-    app.innerHTML = '<div style="padding: 80px 32px; text-align: center; font-family: sans-serif;"><h1>⚠️ Configuration missing</h1><p>Make sure <code>config.js</code> is present and loads before this script.</p></div>';
+  try {
+    const res = await fetch('config.json?t=' + Date.now());
+    if (!res.ok) throw new Error('Failed to load config.json');
+    cfg = await res.json();
+  } catch (err) {
+    app.innerHTML = '<div style="padding: 80px 32px; text-align: center; font-family: sans-serif;"><h1>⚠️ Configuration missing</h1><p>Could not load <code>config.json</code>. Error: ' + err.message + '</p></div>';
     return;
   }
 
@@ -997,6 +1006,19 @@
     }
   });
 })();
+</script>
+
+<!-- Redirect to /admin after signup invite is accepted -->
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
 </script>
 
 </body>
